@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:title="GMail SMTP Settings">
+
+        <EditTextPreference
+            android:key="pref_smtp_host"
+            android:title="SMTP Host"
+            android:summary="SMTP Host (smtp.gmail.com)"
+            android:dialogTitle="SMTP Host" />
+
+        <EditTextPreference
+            android:key="pref_smtp_port"
+            android:title="SMTP Port"
+            android:summary="SMTP Port (587)"
+            android:dialogTitle="SMTP Port" />
+
+        <EditTextPreference
+            android:key="pref_smtp_username"
+            android:title="SMTP Username"
+            android:summary="SMTP Username"
+            android:dialogTitle="SMTP Username" />
+
+        <EditTextPreference
+            android:key="pref_smtp_password"
+            android:title="SMTP Password"
+            android:summary="SMTP Password"
+            android:dialogTitle="SMTP Password" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Notification email address">
+
+        <EditTextPreference
+            android:key="pref_email_address"
+            android:title="Email address"
+            android:summary="Email address"
+            android:dialogTitle="Email address" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="App Settings">
+
+        <EditTextPreference
+            android:key="pref_roll_tilt_threshold"
+            android:title="Roll tilt threshold"
+            android:summary="% tilt in left-right direction to ignore (2%)"
+            android:dialogTitle="Roll tilt threshold" />
+
+        <EditTextPreference
+            android:key="pref_pitch_tilt_threshold"
+            android:title="Pitch tilt threshold"
+            android:summary="% tilt in front-back direction to ignore (2%)"
+            android:dialogTitle="Start Delay" />
+
+        <EditTextPreference
+            android:key="pref_size_threshold"
+            android:title="Motion threshold"
+            android:summary="% change in scene to detect (5%)"
+            android:dialogTitle="Detected size" />
+
+        <EditTextPreference
+            android:key="pref_start_delay"
+            android:title="Start Delay"
+            android:summary="Seconds after start before motion detect (Default: 5s)"
+            android:dialogTitle="Start Delay" />
+
+        <EditTextPreference
+            android:key="pref_detected_delay"
+            android:title="Detected resume delay"
+            android:summary="Seconds after detection before resuming motion detect (Default: 30s)"
+            android:dialogTitle="Detected resume delay" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
