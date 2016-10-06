@@ -346,6 +346,20 @@ public final class CameraActivity extends AppCompatActivity
     public void onResume() {
         super.onResume();
         //OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_0_0, this, mLoaderCallback);
+        if (!OpenCVLoader.initDebug()) {
+            // Handle initialization error
+            Log.e("OPENCV LOADER", " Resume OpenCVLoader.initDebug(), not working.");
+        }
+        else
+        {
+            Log.d("OPENCV LOADER", " Resume OpenCVLoader.initDebug(), working.");
+            if(mCameraView != null)
+                mCameraView.enableView();
+
+
+            //System.loadLibrary("my_jni_lib1");
+            //System.loadLibrary("my_jni_lib2");
+        }
 
         mIsMenuLocked = false;
     }

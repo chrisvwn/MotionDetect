@@ -50,6 +50,7 @@ public final class MotionDetectFilter implements Filter {
     Point topLeft = new Point(), bottomRight = new Point();
     boolean msgDisplayed = false;
     double imgFraction;
+    double currTime;
 
     //constructor
     public MotionDetectFilter(int prefStartDelay, int prefDetectedDelay, int prefSize)
@@ -135,6 +136,7 @@ public final class MotionDetectFilter implements Filter {
         frameDelta.release();
         thresh.release();
         hierarchy.release();
+        //System.gc();
 
         return imgResult;
     }
@@ -144,7 +146,7 @@ public final class MotionDetectFilter implements Filter {
 
 //        src.copyTo(dst);
 
-        double currTime = System.currentTimeMillis();
+        currTime = System.currentTimeMillis();
 
         motion.set(false);
 /*
@@ -184,5 +186,7 @@ public final class MotionDetectFilter implements Filter {
         motionDetected.set(motion.get());
 
         diff.copyTo(dst);
+
+        diff.release();
     }
 }
